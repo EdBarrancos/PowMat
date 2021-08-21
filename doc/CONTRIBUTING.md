@@ -4,6 +4,7 @@
 
 1. [Code of Conduct](##code-of-conduct)
 2. [Naming Conventions](##naming-conventions)
+3. [Project Structure](##project-structure)
 
 ## Code of Conduct
 
@@ -20,3 +21,5 @@ Global variables start with a `g_` perfix
 Static class variables start with a `s_` perfix
 
 Constants start with a `c_` perfix
+
+## Project Structure
