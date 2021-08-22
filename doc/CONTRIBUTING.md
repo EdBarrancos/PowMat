@@ -22,4 +22,6 @@ Static class variables start with a `s_` perfix
 
 Constants start with a `c_` perfix
 
+Folders as [snake case](https://en.wikipedia.org/wiki/Snake_case)
+
 ## Project Structure
