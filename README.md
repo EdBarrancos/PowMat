@@ -21,3 +21,5 @@
 ### How to Run Tests
 
 ## About me
+
+Hello I'm Yours Trully, Or [Eduardo Barrancos](https://github.com/EdBarrancos), I'm a college student who has fun doing little projects like this one :)
