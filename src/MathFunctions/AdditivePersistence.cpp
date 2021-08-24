@@ -8,11 +8,12 @@
 //Namepspaces
 using namespace std;
 
-AdditivePersistance::AdditivePersistance(CommonObject* number){
+AdditivePersistence::AdditivePersistence(Integer* number){
     //TODO: Calculate Additive Persistence
+    string names[] = {"additive_persistence"};
     _result = number;
 }
 
-CommonObject* AdditivePersistance::GetResult(){
+CommonObject* AdditivePersistence::GetResult(){
     return _result;
 }

@@ -8,11 +8,12 @@
 //Namepspaces
 using namespace std;
 
-MultiplicativePersistance::MultiplicativePersistance(CommonObject* number){
+MultiplicativePersistence::MultiplicativePersistence(Integer* number){
     //TODO: Calculate MultiplicativePersistance
+    string names[] = {"mutiplicative_persistence"};
     _result = number;
 }
 
-CommonObject* MultiplicativePersistance::GetResult(){
+CommonObject* MultiplicativePersistence::GetResult(){
     return _result;
 }

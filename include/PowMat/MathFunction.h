@@ -6,13 +6,15 @@ using namespace std;
 
 class MathFunction{
     public:
+        string* names;
+    public:
         MathFunction();
         virtual CommonObject* GetResult() = 0;
 };
 
-class MultiplicativePersistance: public MathFunction{
+class MultiplicativePersistence: public MathFunction{
     /* 
-    * Calculate the Multiplicative Persistance of a Number
+    * Calculate the Multiplicative Persistence of a Number
     * 
     * Returns how many times  you do the product of the Number's 
     * digits until i reaches a single digit 
@@ -21,15 +23,15 @@ class MultiplicativePersistance: public MathFunction{
         CommonObject* _result;
     public:
         //Constructor
-        MultiplicativePersistance(CommonObject* number);
+        MultiplicativePersistence(Integer* number);
 
         //Getters
         CommonObject* GetResult() override;
 };
 
-class AdditivePersistance: public MathFunction{
+class AdditivePersistence: public MathFunction{
     /* 
-    * Calculate the Additive Persistance of a Number 
+    * Calculate the Additive Persistence of a Number 
     * 
     * Returns how many times you do the sum of the Number's 
     * digits until it reaches a single digit
@@ -38,7 +40,7 @@ class AdditivePersistance: public MathFunction{
         CommonObject* _result;
     public:
         //Constructor
-        AdditivePersistance(CommonObject* number);
+        AdditivePersistence(Integer* number);
 
         //Getters
         CommonObject* GetResult() override;
