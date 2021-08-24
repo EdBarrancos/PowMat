@@ -14,6 +14,15 @@ class Integer: public CommonObject{
     protected:
         int _value;
     public:
+        //Constructor
         Integer(int value);
+
+        //Getters
+        int GetValue();
+        int GetMostSignificantDigit();
+        int GetNumberOfDigits();
         string GetPrintableForm() override;
+
+        void MultiplyDigits();
+        void ShiftRight();
 };
