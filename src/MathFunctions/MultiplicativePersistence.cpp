@@ -11,11 +11,10 @@ using namespace std;
 
 MultiplicativePersistence::MultiplicativePersistence(Integer* number){
     //TODO: Calculate MultiplicativePersistance
-    string names[] = {"mutiplicative_persistence"};
     _result = new Integer(number->GetValue() * number->GetValue());
 }
 
-vector<string> MultiplicativePersistence::c_names = {"multiplicative_persistence"};
+vector<string> MultiplicativePersistence::s_names = {"multiplicative_persistence"};
 
 CommonObject* MultiplicativePersistence::GetResult(){
     return _result;

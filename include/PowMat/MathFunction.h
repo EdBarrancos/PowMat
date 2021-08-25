@@ -10,7 +10,7 @@ class MathFunction{
     public:
         MathFunction();
         virtual CommonObject* GetResult() = 0;
-        static vector<string> c_names;
+        static vector<string> s_names;
 };
 
 class MultiplicativePersistence: public MathFunction{
@@ -31,7 +31,7 @@ class MultiplicativePersistence: public MathFunction{
         CommonObject* GetResult() override;
 
         //Variables
-        static  vector<string> c_names;
+        static  vector<string> s_names;
 };
 
 class AdditivePersistence: public MathFunction{
@@ -51,5 +51,5 @@ class AdditivePersistence: public MathFunction{
         CommonObject* GetResult() override;
 
         //Variables
-        static  vector<string> c_names;
+        static  vector<string> s_names;
 };
