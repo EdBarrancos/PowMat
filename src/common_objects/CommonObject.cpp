@@ -17,3 +17,7 @@ Integer::Integer(int value){
 string Integer::GetPrintableForm(){
     return to_string(_value);
 }
+
+int Integer::GetValue(){
+    return _value;
+}
