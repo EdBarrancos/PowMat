@@ -1,4 +1,5 @@
 // Standard Library Imports
+#include <vector>
 
 // Third Party Imports
 
@@ -15,4 +16,5 @@ class MiddleMan{
         MathFunctionFabric* _mathFunctionFabric;
     public:
         MiddleMan();
+        CommonObject* CalculateMathFunction(string name, vector<CommonObject*> arguments);
 };
