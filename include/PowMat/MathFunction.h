@@ -2,14 +2,15 @@
 
 #include "./CommonObject.h"
 
+#include <vector>
+
 using namespace std;
 
 class MathFunction{
     public:
-        string* names;
-    public:
         MathFunction();
         virtual CommonObject* GetResult() = 0;
+        static vector<string> c_names;
 };
 
 class MultiplicativePersistence: public MathFunction{
@@ -21,12 +22,16 @@ class MultiplicativePersistence: public MathFunction{
     * */
     protected:
         CommonObject* _result;
+        
     public:
         //Constructor
         MultiplicativePersistence(Integer* number);
 
         //Getters
         CommonObject* GetResult() override;
+
+        //Variables
+        static  vector<string> c_names;
 };
 
 class AdditivePersistence: public MathFunction{
@@ -44,4 +49,7 @@ class AdditivePersistence: public MathFunction{
 
         //Getters
         CommonObject* GetResult() override;
+
+        //Variables
+        static  vector<string> c_names;
 };
