@@ -5,7 +5,7 @@
 
 // Local Imports
 #include "../include/PowMat/CommonObject.h"
-#include "../include/PowMat/MathFunction.h"
+#include "../include/PowMat/MiddleMan.h"
 
 //Namespaces
 using namespace std;
@@ -13,7 +13,10 @@ using namespace std;
 
 int main(){
     int number;
+    string name;
+    MiddleMan* middleMan = new MiddleMan();
 
+    cout << "number\n";
     int ignore = scanf("%d", &number);
     if (!ignore)
     {
@@ -21,11 +24,14 @@ int main(){
     }
     Integer integer(number);
 
-    cout <<  integer.GetPrintableForm() << "\n";
+    cout << "function\n";
+    cin >> name;
 
-    AdditivePersistance mul(&integer);
+    cout <<  "Number you put: " << integer.GetPrintableForm() << "\n";
 
-    cout << mul.GetResult()->GetPrintableForm() << "\n";
+    vector<CommonObject*> arguments;
+    arguments.push_back(&integer);
+    cout << "Result: " << middleMan->CalculateMathFunction(name, arguments)->GetPrintableForm() << "\n";
 
     return 0;
 }
