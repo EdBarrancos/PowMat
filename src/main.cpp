@@ -24,14 +24,13 @@ int main(){
     }
     Integer integer(number);
 
-    cout << "function\n";
-    cin >> name;
-
     cout <<  "Number you put: " << integer.GetPrintableForm() << "\n";
 
-    vector<CommonObject*> arguments;
-    arguments.push_back(&integer);
-    cout << "Result: " << middleMan->CalculateMathFunction(name, arguments)->GetPrintableForm() << "\n";
+    cout << "NEW NUMBER\n";
+    cin >> number;
+
+    integer.SetValue(number);
+    cout <<  "Number you put: " << integer.GetPrintableForm() << "\n";
 
     return 0;
 }

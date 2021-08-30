@@ -22,7 +22,10 @@ class Integer: public CommonObject{
         int GetMostSignificantDigit();
         int GetNumberOfDigits();
         string GetPrintableForm() override;
+        int GetProductOfDigits();
+        int GetSumOfDigits();
 
-        void MultiplyDigits();
+        //Setters
         void ShiftRight();
+        void SetValue(int value);
 };
