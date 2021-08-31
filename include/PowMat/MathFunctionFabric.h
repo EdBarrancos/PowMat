@@ -1,4 +1,5 @@
-#pragma one
+#ifndef MATHFUNCTIONFABRIC
+#define MATHFUNCTIONFABRIC
 
 // Standard Library Imports
 
@@ -16,3 +17,5 @@ class MathFunctionFabric{
         MultiplicativePersistence* CreateMultiplicativePersistence(Integer* num);
         AdditivePersistence* CreateAdditivePersistence(Integer* num);
 };
+
+#endif

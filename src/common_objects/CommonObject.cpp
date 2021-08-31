@@ -13,8 +13,16 @@ using namespace std;
 
 CommonObject::CommonObject(){}
 
+Integer::Integer(){
+    _value = 0;
+}
+
 Integer::Integer(int value){
     _value = value;
+}
+
+void Integer::CloneInteger(Integer* end){
+    end =  new Integer(this->GetValue());
 }
 
 

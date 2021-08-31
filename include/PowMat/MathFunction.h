@@ -21,7 +21,10 @@ class MultiplicativePersistence: public MathFunction{
     * digits until i reaches a single digit 
     * */
     protected:
-        CommonObject* _result;
+        Integer* _result;
+
+    private:
+        void _AuxMultiplicativePersistence(Integer num, Integer* mult);
         
     public:
         //Constructor
@@ -42,7 +45,7 @@ class AdditivePersistence: public MathFunction{
     * digits until it reaches a single digit
     * */
     protected:
-        CommonObject* _result;
+        Integer* _result;
     public:
         //Constructor
         AdditivePersistence(Integer* number);
