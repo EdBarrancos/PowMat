@@ -14,9 +14,10 @@ using namespace std;
 int main(){
     int number;
     string name;
+    char aName[100];
     MiddleMan* middleMan = new MiddleMan();
 
-    cout << "number\n";
+
     int ignore = scanf("%d", &number);
     if (!ignore)
     {
@@ -24,13 +25,17 @@ int main(){
     }
     Integer integer(number);
 
-    cout <<  "Number you put: " << integer.GetPrintableForm() << "\n";
 
-    cout << "NEW NUMBER\n";
-    cin >> number;
+    ignore = scanf("%s", aName);
+    if (!ignore)
+    {
+        exit(1);
+    }
+    name = aName;
 
-    integer.SetValue(number);
-    cout <<  "Number you put: " << integer.GetPrintableForm() << "\n";
+
+    vector<CommonObject*> arguments = {&integer};
+    cout  << middleMan->CalculateMathFunction(name, arguments)->GetPrintableForm() << "\n";
 
     return 0;
 }
