@@ -17,7 +17,7 @@ class Integer: public CommonObject{
         //Constructor
         Integer();
         Integer(int value);
-        void CloneInteger(Integer* end);
+        Integer(Integer* original);
 
         //Getters
         int GetValue();

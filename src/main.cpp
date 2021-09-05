@@ -35,7 +35,7 @@ int main(){
 
 
     vector<CommonObject*> arguments = {&integer};
-    cout  << middleMan->CalculateMathFunction(name, arguments)->GetPrintableForm() << "\n";
+    cout  << middleMan->CalculateMathFunction(name, arguments)->GetPrintableForm();
 
     return 0;
 }

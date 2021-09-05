@@ -1,4 +1,5 @@
 // Standard Library Imports
+#include <iostream>
 
 // Third Party Imports
 
@@ -21,8 +22,8 @@ Integer::Integer(int value){
     _value = value;
 }
 
-void Integer::CloneInteger(Integer* end){
-    end =  new Integer(this->GetValue());
+Integer::Integer(Integer* original){
+    _value = original->GetValue();
 }
 
 
