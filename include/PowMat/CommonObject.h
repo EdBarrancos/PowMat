@@ -10,6 +10,20 @@ class CommonObject{
         virtual string GetPrintableForm() = 0;
 };
 
+class String: public CommonObject{
+    protected:
+        string _value;
+    public:
+        //Constructor
+        String();
+        String(string value);
+        String(String* original);
+
+        //Getters
+        string GetValue();
+        string GetPrintableForm() override; 
+};
+
 class Integer: public CommonObject{
     protected:
         int _value;
