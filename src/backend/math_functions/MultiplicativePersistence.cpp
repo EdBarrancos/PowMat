@@ -35,10 +35,10 @@ CommonObject* MultiplicativePersistence::GetResult(){
     return _result;
 }
 
-int MultiplicativePersistence::GetNumberOfArguments(){
+int MultiplicativePersistence::s_GetNumberOfArguments(){
     return 1;
 }
 
-vector<CommonObject*> MultiplicativePersistence::GetArgumentsType(){
-    return vector<CommonObject*>(this->GetNumberOfArguments(), &Integer());
+vector<CommonObject*> MultiplicativePersistence::s_GetArgumentsType(){
+    return vector<CommonObject*>(s_GetNumberOfArguments(), new Integer());
 }

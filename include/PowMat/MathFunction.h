@@ -11,6 +11,8 @@ class MathFunction{
         MathFunction();
         virtual CommonObject* GetResult() = 0;
         static vector<string> s_names;
+        static int s_GetNumberOfArguments();
+        static vector<CommonObject*> s_GetArgumentsType();
 };
 
 class MultiplicativePersistence: public MathFunction{
@@ -32,6 +34,8 @@ class MultiplicativePersistence: public MathFunction{
 
         //Getters
         CommonObject* GetResult() override;
+        static int s_GetNumberOfArguments();
+        static vector<CommonObject*> s_GetArgumentsType();
 
         //Variables
         static  vector<string> s_names;
@@ -55,6 +59,8 @@ class AdditivePersistence: public MathFunction{
 
         //Getters
         CommonObject* GetResult() override;
+        static int s_GetNumberOfArguments();
+        static vector<CommonObject*> s_GetArgumentsType();
 
         //Variables
         static  vector<string> s_names;

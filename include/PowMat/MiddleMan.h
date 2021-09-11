@@ -14,7 +14,10 @@ using namespace std;
 class MiddleMan{
     protected:
         MathFunctionFabric* _mathFunctionFabric;
+
+    private:
+        bool CheckFunctionArguments(vector<CommonObject*> arguments, int numberOfArgs);
     public:
         MiddleMan();
-        CommonObject* CalculateMathFunction(string name, vector<CommonObject*> arguments);
+        CommonObject* CalculateMathFunction(String name, vector<CommonObject*> arguments);
 };

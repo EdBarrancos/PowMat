@@ -34,10 +34,10 @@ CommonObject* AdditivePersistence::GetResult(){
     return _result;
 }
 
-int AdditivePersistence::GetNumberOfArguments(){
+int AdditivePersistence::s_GetNumberOfArguments(){
     return 1;
 }
 
-vector<CommonObject*> AdditivePersistence::GetArgumentsType(){
-    return vector<CommonObject*>(this->GetNumberOfArguments(), &Integer());
+vector<CommonObject*> AdditivePersistence::s_GetArgumentsType(){
+    return vector<CommonObject*>(s_GetNumberOfArguments(), new Integer());
 }
