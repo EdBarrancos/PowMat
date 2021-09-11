@@ -5,6 +5,7 @@
 1. [Code of Conduct](##code-of-conduct)
 2. [Naming Conventions](##naming-conventions)
 3. [Project Structure](##project-structure)
+4. [Plans and Fixes](##plans-and-fixes)
 
 ## Code of Conduct
 
@@ -28,3 +29,9 @@ Errors Message Formating:
 Error(%Who is Throwing Error%): %Message%
 
 ## Project Structure
+
+## Plans and Fixes
+
+- [ ] Better Error Handling
+- [ ] Interface
+- [ ] PowMat Language
