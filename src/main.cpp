@@ -17,7 +17,6 @@ int main(){
     char aName[100];
     MiddleMan* middleMan = new MiddleMan();
 
-
     int ignore = scanf("%d", &number);
     if (!ignore)
     {

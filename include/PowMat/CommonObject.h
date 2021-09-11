@@ -24,6 +24,18 @@ class String: public CommonObject{
         string GetPrintableForm() override; 
 };
 
+class Error: public CommonObject{
+    protected:
+        string _value;
+    public:
+        Error();
+        Error(string value);
+        Error(String* value);
+
+        string GetPrintableForm() override;
+};
+
+
 class Integer: public CommonObject{
     protected:
         int _value;

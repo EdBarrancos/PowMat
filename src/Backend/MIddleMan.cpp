@@ -28,6 +28,8 @@ CommonObject* MiddleMan::CalculateMathFunction(string name, vector<CommonObject*
         }
     }
 
+    return new Error("ERROR: Function non Existent");
+
     //TODO: Better way to hande, expecially arguments
     //TODO: Not scalable
     //TODO: Throw exceptions if wrong name
