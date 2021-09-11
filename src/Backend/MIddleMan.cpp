@@ -29,6 +29,7 @@ CommonObject* MiddleMan::CalculateMathFunction(string name, vector<CommonObject*
     }
 
     //TODO: Better way to hande, expecially arguments
+    //TODO: Not scalable
     //TODO: Throw exceptions if wrong name
     //TODO: Throw exceptions if wrong args
     return 0;

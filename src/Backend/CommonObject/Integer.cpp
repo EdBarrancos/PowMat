@@ -4,15 +4,13 @@
 // Third Party Imports
 
 // Local Imports
-#include "../../include/PowMat/CommonObject.h"
+#include "../../../include/PowMat/CommonObject.h"
 
 //Namespaces
 using namespace std;
 
 
 //CONSTRUCTOR
-
-CommonObject::CommonObject(){}
 
 Integer::Integer(){
     _value = 0;
