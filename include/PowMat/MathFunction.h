@@ -46,6 +46,9 @@ class AdditivePersistence: public MathFunction{
     * */
     protected:
         Integer* _result;
+
+    private:
+        void _AuxAdditivePersistence(Integer num, Integer* add);
     public:
         //Constructor
         AdditivePersistence(Integer* number);
