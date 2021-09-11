@@ -9,6 +9,8 @@
 
 ## Code of Conduct
 
+Behave, don't be an as*\**** to other people and Have fun. 
+
 ## Naming Conventions
 
 Using [CamelCase](https://pt.wikipedia.org/wiki/CamelCase) for everything.

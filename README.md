@@ -12,13 +12,35 @@
 
 ## About Project
 
+I'm trying to build a repo that I can store a number of Mathematical functions, maybe even algorithms in the future.
+
 ## Project Status
+
+In Progress, Extremely in the beginning
 
 ## Install
 
 ## Use
 
+```make run```
+
+Or if it is already compiled: ```./bin/powMat```
+
 ### How to Run Tests
+
+#### Create Tests
+
+Create a file with the test name, no extensions, in the [input folder](tests/inputs). In this file write the pretended input.
+
+Then create a file with the same name in the [output folder](tests/outputs). In this file write the pretended output.
+
+#### Run Tests
+
+```python3 Testing.py``` on **Ubuntu**
+
+```python Testing.py``` or ```python3 Testing.py``` on **Windows**
+
+```./Testing.py``` on **Mac OS**
 
 ## About me
 
