@@ -77,3 +77,9 @@ void Integer::ShiftRight(){
 void Integer::SetValue(int value){
     _value = value;
 }
+
+
+
+bool Integer::Compare(CommonObject* one, CommonObject* two){
+    return ((Integer*)one)->GetValue() == ((Integer*)two)->GetValue();
+}

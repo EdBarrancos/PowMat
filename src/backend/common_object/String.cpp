@@ -29,3 +29,7 @@ string String::GetValue(){
 string String::GetPrintableForm(){
     return _value;
 }
+
+bool String::Compare(CommonObject* one, CommonObject* two){
+    return ((String*)one)->GetValue().compare(((String*)two)->GetValue()) == 0;
+}

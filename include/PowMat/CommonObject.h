@@ -8,6 +8,7 @@ class CommonObject{
     public:
         CommonObject();
         virtual string GetPrintableForm() = 0;
+        virtual bool Compare(CommonObject* one, CommonObject* two) = 0;
 };
 
 class String: public CommonObject{
@@ -22,6 +23,8 @@ class String: public CommonObject{
         //Getters
         string GetValue();
         string GetPrintableForm() override; 
+
+        bool Compare(CommonObject* one, CommonObject* two) override;
 };
 
 class Error: public CommonObject{
@@ -56,4 +59,6 @@ class Integer: public CommonObject{
         //Setters
         void ShiftRight();
         void SetValue(int value);
+
+        bool Compare(CommonObject* one, CommonObject* two) override;
 };
