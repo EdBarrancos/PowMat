@@ -10,10 +10,13 @@
 using namespace std;
 
 AdditivePersistence::AdditivePersistence(Integer* number){
-    //TODO: Calculate Additive Persistence
+    if(typeid(number) != typeid(Integer*)){
+        _result = new Error("ERROR(AdditivePersistence): Wrong Function Argument");
+        return;
+    }
     Integer auxNum(number);
     _result = new Integer(0);
-    this->_AuxAdditivePersistence(auxNum, _result);
+    this->_AuxAdditivePersistence(auxNum, (Integer*)_result);
 }
 
 void AdditivePersistence::_AuxAdditivePersistence(Integer num, Integer* add){
