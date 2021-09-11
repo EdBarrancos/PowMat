@@ -11,10 +11,13 @@
 using namespace std;
 
 MultiplicativePersistence::MultiplicativePersistence(Integer* number){
-    //TODO: Calculate MultiplicativePersistance
+    if(typeid(number) != typeid(Integer*)){
+        _result = new Error("ERROR(MultiplicativePersistence): Wrong Function Argument");
+        return;
+    }
     Integer auxNum(number);
     _result = new Integer(0);
-    this->_AuxMultiplicativePersistence(auxNum, _result);
+    this->_AuxMultiplicativePersistence(auxNum, (Integer*)_result);
 }
 
 void MultiplicativePersistence::_AuxMultiplicativePersistence(Integer num, Integer* mult){
@@ -30,4 +33,12 @@ vector<string> MultiplicativePersistence::s_names = {"multiplicative_persistence
 
 CommonObject* MultiplicativePersistence::GetResult(){
     return _result;
+}
+
+int MultiplicativePersistence::GetNumberOfArguments(){
+    return 1;
+}
+
+vector<CommonObject*> MultiplicativePersistence::GetArgumentsType(){
+    return vector<CommonObject*>(this->GetNumberOfArguments(), &Integer());
 }

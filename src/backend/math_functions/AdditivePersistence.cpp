@@ -33,3 +33,11 @@ vector<string> AdditivePersistence::s_names = {"additive_persistence"};
 CommonObject* AdditivePersistence::GetResult(){
     return _result;
 }
+
+int AdditivePersistence::GetNumberOfArguments(){
+    return 1;
+}
+
+vector<CommonObject*> AdditivePersistence::GetArgumentsType(){
+    return vector<CommonObject*>(this->GetNumberOfArguments(), &Integer());
+}
