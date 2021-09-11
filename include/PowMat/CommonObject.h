@@ -36,6 +36,7 @@ class Error: public CommonObject{
         Error(String* value);
 
         string GetPrintableForm() override;
+        bool Compare(CommonObject* other) override;
 };
 
 
