@@ -80,6 +80,6 @@ void Integer::SetValue(int value){
 
 
 
-bool Integer::Compare(CommonObject* one, CommonObject* two){
-    return ((Integer*)one)->GetValue() == ((Integer*)two)->GetValue();
+bool Integer::Compare(CommonObject* other){
+    return this->GetValue() == ((Integer*)other)->GetValue();
 }
