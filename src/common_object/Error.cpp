@@ -4,7 +4,7 @@
 // Third Party Imports
 
 // Local Imports
-#include "../../../include/PowMat/CommonObject.h"
+#include "../../include/PowMat/CommonObject.h"
 
 //Constructor
 
