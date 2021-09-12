@@ -9,6 +9,8 @@
 //Namespaces
 using namespace std;
 
+MiddleMan middleMan;
+
 MiddleMan::MiddleMan(){
     _mathFunctionFabric = new MathFunctionFabric();
 }
