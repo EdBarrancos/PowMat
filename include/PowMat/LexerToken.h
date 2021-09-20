@@ -38,7 +38,7 @@ class Token{
 
 enum CharClassifier
 {
-    WHITE_SPACE,
+    WHITE_SPACE, //whitespace tab
     CHARACTER, //a -> z _
     NUMERICAL, //0 -> 9
     SEPARATOR, //, ; ( ) { } // 
@@ -53,5 +53,5 @@ class Lexer{
         vector<Token*> LexString(string commandLine);
 
     protected:
-        map<CharClassifier, char> _charClassifierMap;
+        map<char, CharClassifier> _charClassifierMap;
 };
