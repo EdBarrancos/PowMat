@@ -7,6 +7,8 @@
 #include "../include/PowMat/CommonObject.h"
 #include "../include/PowMat/MiddleMan.h"
 #include "../include/PowMat/ErrorHandler.h"
+#include "../include/PowMat/Interpreter.h"
+
 
 //Namespaces
 using namespace std;
@@ -40,5 +42,6 @@ int main(){
         cout  << result->GetPrintableForm();
     }
     error.LogErrors();
+
     return 0;
 }

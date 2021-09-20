@@ -21,3 +21,5 @@ class MiddleMan{
         MiddleMan();
         CommonObject* CalculateMathFunction(String name, vector<CommonObject*> arguments);
 };
+
+extern MiddleMan middleMan;
