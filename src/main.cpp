@@ -6,6 +6,7 @@
 // Local Imports
 #include "../include/PowMat/CommonObject.h"
 #include "../include/PowMat/MiddleMan.h"
+#include "../include/PowMat/ErrorHandler.h"
 
 //Namespaces
 using namespace std;
@@ -33,8 +34,11 @@ int main(){
     name = aName;
 
 
-    vector<CommonObject*> arguments = {&integer};
-    cout  << middleMan->CalculateMathFunction(name, arguments)->GetPrintableForm();
-
+    vector<CommonObject*> arguments = {&integer, &integer};
+    CommonObject* result = middleMan->CalculateMathFunction(name, arguments); 
+    if(error.IsQueueEmpty()){
+        cout  << result->GetPrintableForm();
+    }
+    error.LogErrors();
     return 0;
 }

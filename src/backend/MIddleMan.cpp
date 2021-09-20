@@ -5,6 +5,7 @@
 
 // Local Imports
 #include "../../include/PowMat/MiddleMan.h"
+#include "../../include/PowMat/ErrorHandler.h"
 
 //Namespaces
 using namespace std;
@@ -21,7 +22,8 @@ CommonObject* MiddleMan::CalculateMathFunction(String name, vector<CommonObject*
             if(this->CheckFunctionArguments(arguments, AdditivePersistence::s_GetNumberOfArguments())){
                 return _mathFunctionFabric->CreateAdditivePersistence((Integer*)arguments[0])->GetResult();
             }
-            return new Error("ERROR(MiddleMan: Wrong Function Arguments");
+            error.QueueError(new Error("(MiddleMan) Wrong Function Arguments", ERROR));
+            return NULL;
         }
     }
 
@@ -30,11 +32,13 @@ CommonObject* MiddleMan::CalculateMathFunction(String name, vector<CommonObject*
             if(this->CheckFunctionArguments(arguments, MultiplicativePersistence::s_GetNumberOfArguments())){
                 return _mathFunctionFabric->CreateMultiplicativePersistence((Integer*)arguments[0])->GetResult();
             }
-            return new Error("ERROR(MiddleMan: Wrong Function Arguments");
+            error.QueueError(new Error("(MiddleMan) Wrong Function Arguments", ERROR));
+            return NULL;
         }
     }
 
-    return new Error("ERROR(MiddleMan): Function non Existent");
+    error.QueueError(new Error("(MiddleMan) Function non Existent", ERROR));
+    return NULL;
 
     //TODO: Better way to hande, expecially arguments
     //TODO: Not scalable
