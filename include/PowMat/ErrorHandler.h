@@ -13,6 +13,7 @@ using namespace std;
 
 enum ErrorPriority
 {
+    SYNTAX_ERROR,
     ERROR,
     WARNING
 };
@@ -34,12 +35,16 @@ class Error{
 
 class ErrorHandler{
     public:
-        void LogError(Error *error);
         void LogErrors();
+
+        void QueueError(Error *error);
+
+
         bool IsQueueEmpty();
         string ErrorPriorityToString(ErrorPriority priority);
     protected:
         vector<Error*> _errorQueue;
+        void LogError(Error *error);
 };
 
 extern ErrorHandler error;

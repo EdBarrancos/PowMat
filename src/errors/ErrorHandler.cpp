@@ -14,6 +14,9 @@ ErrorHandler error;
 
 string ErrorHandler::ErrorPriorityToString(ErrorPriority priority){
     switch(priority){
+        case SYNTAX_ERROR:
+            return "SYNTAX ERROR";
+            break;
         case ERROR:
             return "ERROR";
             break;
@@ -50,7 +53,9 @@ void ErrorHandler::LogError(Error *error){
     cout << "\n";
 }
 
-
+void ErrorHandler::QueueError(Error* error){
+    _errorQueue.push_back(error);
+}
 
 bool ErrorHandler::IsQueueEmpty(){
     return _errorQueue.empty();
