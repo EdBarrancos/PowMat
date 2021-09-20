@@ -12,26 +12,34 @@
 // Namespace
 using namespace std;
 
+enum TokenType{
+                LINE_END,
+                IDENTIFIER,
+                SEPARATOR,
+                OPERATOR,
+                LITERAL,
+                UNKNOWN
+            };
+
 class Token{
-    protected:
-        enum TokenType{
-            LINE_END,
-            IDENTIFIER,
-            SEPARATOR,
-            OPERATOR,
-            LITERAL,
-            UNKNOWN
-        };
-        TokenType tokenType;
-        int charPos;
     public:
-        Token();
+        Token(TokenType tokenType, string token, int charInitialPos);
+
+        //Getters
+        TokenType GetTokenType();
+        int GetCharInitialPos();
+        string GetTokenString();
+
+    protected:
+        TokenType _tokenType;
+        int _charInitialPos;
+        string _token;
 };
 
 enum CharClassifier
 {
     WHITE_SPACE,
-    CHARACTER, //a -> z + _
+    CHARACTER, //a -> z _
     NUMERICAL, //0 -> 9
     SEPARATOR, //, ; ( ) { } // 
     QUOTES, // ""
@@ -43,6 +51,7 @@ class Lexer{
     public:
         Lexer();
         vector<Token*> LexString(string commandLine);
+
     protected:
         map<CharClassifier, char> _charClassifierMap;
 };
