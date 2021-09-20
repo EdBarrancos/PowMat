@@ -5,13 +5,15 @@
 
 // Local Imports
 #include "../../../include/PowMat/MathFunction.h"
+#include "../../../include/PowMat/ErrorHandler.h"
 
 //Namepspaces
 using namespace std;
 
 AdditivePersistence::AdditivePersistence(Integer* number){
     if(typeid(number) != typeid(Integer*)){
-        _result = new Error("ERROR(AdditivePersistence): Wrong Function Argument");
+        error.QueueError(new Error("(AdditivePersistence): Wrong Function Argument", ERROR));
+        _result = NULL;
         return;
     }
     Integer auxNum(number);
