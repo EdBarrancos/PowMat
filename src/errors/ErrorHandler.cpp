@@ -33,7 +33,9 @@ void ErrorHandler::LogErrors(){
     //TODO: Sort queue by priority
     vector<Error*>::iterator it;
     for(it = _errorQueue.begin(); it != _errorQueue.end(); it++){
-        error.LogError(*it);
+        if(!(*it)->Logged()){
+            error.LogError(*it);
+        }
     }
 
     for(it = _errorQueue.begin(); it != _errorQueue.end(); it++){
@@ -51,6 +53,8 @@ void ErrorHandler::LogError(Error *error){
     cout << "\033[0m:";
     cout << error->GetMessage();
     cout << "\n";
+
+    error->Log();
 }
 
 void ErrorHandler::QueueError(Error* error){
@@ -85,5 +89,9 @@ string Error::GetMessage(){
 
 bool Error::Logged(){
     return _logged;
+}
+
+void Error::Log(){
+    _logged = true;
 }
 

@@ -27,6 +27,7 @@ class Error{
         ErrorPriority GetPriority();
         string GetMessage();
         bool Logged();
+        void Log();
     protected:
         string _errorMessage;
         ErrorPriority _errorPriority;

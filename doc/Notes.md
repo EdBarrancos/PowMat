@@ -4,6 +4,8 @@
 
 Not sure about the best way to handle errors in a program like this
 
+In the meanwhile I updated the way I handle Errors, but I'm not sure its the best way still
+
 ## Interpreter
 
 ### Lexer
