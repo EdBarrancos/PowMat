@@ -28,7 +28,7 @@ Constants start with a `c_` perfix
 Folders as [snake case](https://en.wikipedia.org/wiki/Snake_case)
 
 Errors Message Formating:
-Error(%Who is Throwing Error%): %Message%
+Error:(%Who is Throwing Error%) %Message%
 
 ## Project Structure
 
