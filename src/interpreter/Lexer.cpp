@@ -13,6 +13,7 @@ Lexer::Lexer(){
 
     //END_OF_LINE
     _charClassifierMap['\n'] = END_OF_LINE;
+    _charClassifierMap[';'] = END_OF_LINE;
 
     //CHARACTER
     for (char c = 'a'; c <= 'z'; ++c){
@@ -30,12 +31,12 @@ Lexer::Lexer(){
     }
 
     //SEPARATOR
+    _charClassifierMap['.'] = SEPARATOR;
     _charClassifierMap[','] = SEPARATOR;
-    _charClassifierMap[';'] = SEPARATOR;
-    _charClassifierMap['('] = SEPARATOR;
-    _charClassifierMap[')'] = SEPARATOR;
-    _charClassifierMap['{'] = SEPARATOR;
-    _charClassifierMap['}'] = SEPARATOR;
+    _charClassifierMap['('] = DOUBLE_SEPERATOR_B;
+    _charClassifierMap[')'] = DOUBLE_SEPERATOR_E;
+    _charClassifierMap['{'] = DOUBLE_SEPERATOR_B;
+    _charClassifierMap['}'] = DOUBLE_SEPERATOR_E;
     _charClassifierMap['|'] = SEPARATOR;
 
     //QUOTE
@@ -47,6 +48,7 @@ Lexer::Lexer(){
     _charClassifierMap['*'] = OPERATOR;
     _charClassifierMap['/'] = OPERATOR;
     _charClassifierMap['%'] = OPERATOR;
+    _charClassifierMap['='] = OPERATOR;
 }
 
 vector<Token*> Lexer::LexString(string commandLine){

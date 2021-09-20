@@ -17,7 +17,8 @@ enum TokenType{
                 IDENTIFIER,
                 SEPARATOR,
                 OPERATOR,
-                LITERAL,
+                NUMBER,
+                STRING,
                 UNKNOWN
             };
 
@@ -41,9 +42,11 @@ enum CharClassifier
     WHITE_SPACE, //whitespace tab
     CHARACTER, //a -> z _
     NUMERICAL, //0 -> 9
-    SEPARATOR, //, ; ( ) { } // 
-    QUOTES, // ""
-    OPERATOR, //- + * / =
+    SEPARATOR, // | .
+    DOUBLE_SEPERATOR_B, // ( {
+    DOUBLE_SEPERATOR_E, // ) }
+    QUOTE, // ""
+    OPERATOR, //- + * / = %
     END_OF_LINE
 };
 
