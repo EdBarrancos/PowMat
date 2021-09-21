@@ -53,8 +53,10 @@ enum CharClassifier
 class Lexer{
     public:
         Lexer();
-        vector<Token*> LexString(string commandLine);
+        vector<Token> LexString(string commandLine);
 
     protected:
         map<char, CharClassifier> _charClassifierMap;
+        CharClassifier GetCurrentCharClass(string line, int pos);
+        Token GetToken(string line, int* currentChar);
 };
