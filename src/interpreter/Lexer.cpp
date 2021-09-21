@@ -33,10 +33,10 @@ Lexer::Lexer(){
     //SEPARATOR
     _charClassifierMap['.'] = SEPARATOR;
     _charClassifierMap[','] = SEPARATOR;
-    _charClassifierMap['('] = DOUBLE_SEPERATOR_B;
-    _charClassifierMap[')'] = DOUBLE_SEPERATOR_E;
-    _charClassifierMap['{'] = DOUBLE_SEPERATOR_B;
-    _charClassifierMap['}'] = DOUBLE_SEPERATOR_E;
+    _charClassifierMap['('] = SEPARATOR;
+    _charClassifierMap[')'] = SEPARATOR;
+    _charClassifierMap['{'] = SEPARATOR;
+    _charClassifierMap['}'] = SEPARATOR;
     _charClassifierMap['|'] = SEPARATOR;
 
     //QUOTE
@@ -53,6 +53,7 @@ Lexer::Lexer(){
 
 vector<Token> Lexer::LexString(string commandLine){
     //TODO: StateMachine
+    //TODO: CheckIfErrorsThrown
     int currentChar = 0;
     vector<Token> tokenList;
 
@@ -78,10 +79,6 @@ Token Lexer::GetToken(string line, int* currentChar){
             break;
         case SEPARATOR:
             break;
-        case DOUBLE_SEPERATOR_B:
-            break;
-        case DOUBLE_SEPERATOR_E:
-            break;
         case QUOTE:
             break;
         case OPERATOR:
@@ -89,7 +86,26 @@ Token Lexer::GetToken(string line, int* currentChar){
         case END_OF_LINE:
             return Token(LINE_END, "", *currentChar);
             break;
+        default:
+            //Error: Character Unknown
+            break;
     }
+}
+
+Token Lexer::FoundCharacter(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
+
+}
+Token Lexer::FoundNumerical(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
+
+}
+Token Lexer::FoundSeparator(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
+
+}
+Token Lexer::FoundQuote(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
+
+}
+Token Lexer::FoundOperator(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
+
 }
 
 CharClassifier Lexer::GetCurrentCharClass(string line, int pos){

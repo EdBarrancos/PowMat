@@ -42,9 +42,7 @@ enum CharClassifier
     WHITE_SPACE, //whitespace tab
     CHARACTER, //a -> z _
     NUMERICAL, //0 -> 9
-    SEPARATOR, // | .
-    DOUBLE_SEPERATOR_B, // ( {
-    DOUBLE_SEPERATOR_E, // ) }
+    SEPARATOR, // | . ( { ) }
     QUOTE, // ""
     OPERATOR, //- + * / = %
     END_OF_LINE
@@ -59,4 +57,11 @@ class Lexer{
         map<char, CharClassifier> _charClassifierMap;
         CharClassifier GetCurrentCharClass(string line, int pos);
         Token GetToken(string line, int* currentChar);
+
+        Token FoundCharacter(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
+        Token FoundNumerical(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
+        Token FoundSeparator(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
+        Token FoundQuote(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
+        Token FoundOperator(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
+
 };
