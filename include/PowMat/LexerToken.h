@@ -13,14 +13,15 @@
 using namespace std;
 
 enum TokenType{
-                LINE_END,
+                WHITE_SPACE,
+                END_OF_LINE,
                 IDENTIFIER,
                 SEPARATOR,
                 OPERATOR,
                 NUMBER,
                 STRING,
                 UNKNOWN
-            };
+};
 
 class Token{
     public:
@@ -30,6 +31,8 @@ class Token{
         TokenType GetTokenType();
         int GetCharInitialPos();
         string GetTokenString();
+
+        void AddCharToString(char newChar);
 
     protected:
         TokenType _tokenType;
@@ -56,12 +59,5 @@ class Lexer{
     protected:
         map<char, CharClassifier> _charClassifierMap;
         CharClassifier GetCurrentCharClass(string line, int pos);
-        Token GetToken(string line, int* currentChar);
-
-        Token FoundCharacter(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
-        Token FoundNumerical(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
-        Token FoundSeparator(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
-        Token FoundQuote(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
-        Token FoundOperator(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar);
-
+        TokenType GetTokenType(TokenType lastTokenType, CharClassifier currentCharClass);
 };

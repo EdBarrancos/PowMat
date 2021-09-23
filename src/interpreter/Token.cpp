@@ -21,3 +21,7 @@ string Token::GetTokenString(){
     return _token;
 }
 
+void Token::AddCharToString(char newChar){
+    _token.push_back(newChar)
+}
+

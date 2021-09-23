@@ -54,58 +54,69 @@ Lexer::Lexer(){
 vector<Token> Lexer::LexString(string commandLine){
     //TODO: StateMachine
     //TODO: CheckIfErrorsThrown
-    int currentChar = 0;
+    int currentPos = 0;
     vector<Token> tokenList;
 
-    Token token = GetToken(commandLine, &currentChar);
 
-    while(token.GetTokenType() != LINE_END){
-        tokenList.push_back(token);
-        token = GetToken(commandLine, &currentChar);
+    TokenType currentTokenType = TokenType::WHITE_SPACE;;
+    for (string::size_type i = 0; i < commandLine.size(); i++, currentPos++) {
+        TokenType newTokenType = GetTokenType(currentTokenType, GetCurrentCharClass(commandLine, i));
+        if(newTokenType == TokenType::WHITE_SPACE){
+            currentTokenType = newTokenType;
+            continue;
+        }
+        if(newTokenType == TokenType::END_OF_LINE){
+            tokenList.push_back(Token(END_OF_LINE,string(""), i));
+            break;
+        }
+        if(newTokenType == currentTokenType){
+            tokenList.back().AddCharToString(commandLine[i]);
+        }
+        if(newTokenType != currentTokenType){
+            tokenList.push_back(Token(currentTokenType,string(1,commandLine[i]),i));
+        }
+
     }
 
     return tokenList;
 }
 
-Token Lexer::GetToken(string line, int* currentChar){
-    switch(GetCurrentCharClass(line, *currentChar)){
-        case WHITE_SPACE:
-            *currentChar ++;
-            return GetToken(line, currentChar);
+TokenType Lexer::GetTokenType(TokenType lastTokenType, CharClassifier currentCharClass){
+    switch (currentCharClass)
+    {
+    case WHITE_SPACE:
+        return TokenType::WHITE_SPACE;
+        break;
+    case END_OF_LINE:
+        return TokenType::END_OF_LINE;
+        break;
+    case CHARACTER:
+        if(lastTokenType == STRING){
+            return lastTokenType;
             break;
-        case CHARACTER:
+        }
+        return TokenType::IDENTIFIER;
+        break;
+    case NUMERICAL:
+        if(lastTokenType == STRING || lastTokenType == IDENTIFIER){
+            return lastTokenType;
             break;
-        case NUMERICAL:
-            break;
-        case SEPARATOR:
-            break;
-        case QUOTE:
-            break;
-        case OPERATOR:
-            break;
-        case END_OF_LINE:
-            return Token(LINE_END, "", *currentChar);
-            break;
-        default:
-            //Error: Character Unknown
-            break;
+        }
+        return TokenType::NUMBER;
+        break;
+    case SEPARATOR:
+        return TokenType::SEPARATOR;
+        break;
+    case QUOTE:
+        return TokenType::STRING;
+        break;
+    case OPERATOR:
+        return TokenType::OPERATOR;
+        break;
+    default:
+        return TokenType::UNKNOWN;
+        break;
     }
-}
-
-Token Lexer::FoundCharacter(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
-
-}
-Token Lexer::FoundNumerical(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
-
-}
-Token Lexer::FoundSeparator(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
-
-}
-Token Lexer::FoundQuote(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
-
-}
-Token Lexer::FoundOperator(string line, char* tokenString, int initalPos, int* currentPos, CharClassifier lasChar){
-
 }
 
 CharClassifier Lexer::GetCurrentCharClass(string line, int pos){
