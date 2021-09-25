@@ -15,33 +15,24 @@ using namespace std;
 
 
 int main(){
-    int number;
-    string name;
-    char aName[100];
-    MiddleMan* middleMan = new MiddleMan();
+    Interpreter interpreter = Interpreter();
 
-    int ignore = scanf("%d", &number);
-    if (!ignore)
-    {
-        exit(1);
+    string line;
+    char auxLine[100];
+
+    while(auxLine[0] != EOF){
+        int ignore = scanf("%s", auxLine);
+        if (!ignore)
+        {
+            exit(1);
+        }
+
+        cout << auxLine << "\n";
+        line = auxLine;
+        interpreter.InterpretOneLine(line);
     }
-    Integer integer(number);
 
-
-    ignore = scanf("%s", aName);
-    if (!ignore)
-    {
-        exit(1);
-    }
-    name = aName;
-
-
-    vector<CommonObject*> arguments = {&integer, &integer};
-    CommonObject* result = middleMan->CalculateMathFunction(name, arguments); 
-    if(error.IsQueueEmpty()){
-        cout  << result->GetPrintableForm();
-    }
-    error.LogErrors();
+    
 
     return 0;
 }

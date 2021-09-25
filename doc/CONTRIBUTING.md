@@ -9,7 +9,7 @@
 
 ## Code of Conduct
 
-Behave, don't be an as*\**** to other people and Have fun. 
+Behave, don't be an as*\**** to other people and Have fun.
 
 ## Naming Conventions
 
@@ -37,3 +37,4 @@ Error:(%Who is Throwing Error%) %Message%
 - [ ] Better Error Handling
 - [ ] Interface
 - [ ] PowMat Language
+    - [ ] Handle Better Tokenization

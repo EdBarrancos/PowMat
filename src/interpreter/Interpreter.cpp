@@ -1,4 +1,5 @@
 // Standard Library Imports
+#include <iostream>
 
 // Third Party Imports
 
@@ -13,7 +14,7 @@ Interpreter::Interpreter(){
     //Parser
     //Action Tree
 
-    //Initializations if needed
+    Initialization();
 }
 
 void Interpreter::Initialization(){
@@ -21,5 +22,9 @@ void Interpreter::Initialization(){
 }
 
 void Interpreter::InterpretOneLine(string line){
-    _lexer.LexString(line);
+    vector<Token> tokenList;
+    tokenList = _lexer.LexString(line);
+    for(vector<Token>::iterator it = tokenList.begin(); it != tokenList.end(); it++){
+        cout << (*it).GetTokenTypeString() << ": " << (*it).GetTokenString() << "\n";
+    }
 }

@@ -1,4 +1,4 @@
-# Questions and decisions I made that I'm not certain
+# Questions and decisions I made that I'm not certain or just simple Doubts (->)
 
 ## Error Handling
 
@@ -12,6 +12,8 @@ In the meanwhile I updated the way I handle Errors, but I'm not sure its the bes
 
 I'll be classifying ```.``` as a separator, but I don't have a use for it now
 
-For now I won't really support comments, I'll classify ```\ and //````as a separator
+For now I won't really support comments
 
 Lexer won't raise any syntax error. I'll leave that for the Parser?
+
+-> Do I have to specify in token / lexer what each Seperator Does?
