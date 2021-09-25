@@ -6,13 +6,15 @@
 
 // Local Imports
 #include "../../../include/PowMat/MathFunction.h"
+#include "../../../include/PowMat/ErrorHandler.h"
 
 //Namepspaces
 using namespace std;
 
 MultiplicativePersistence::MultiplicativePersistence(Integer* number){
     if(typeid(number) != typeid(Integer*)){
-        _result = new Error("ERROR(MultiplicativePersistence): Wrong Function Argument");
+        error.QueueError(new Error("(MultiplicativePersistence): Wrong Function Argument", ERROR));
+        _result = NULL;
         return;
     }
     Integer auxNum(number);
