@@ -5,8 +5,6 @@
 
 // Local Imports
 #include "../../include/PowMat/Interpreter.h"
-#include "../../include/PowMat/CommonObject.h"
-#include "../../include/PowMat/MiddleMan.h"
 
 
 Interpreter::Interpreter(){
@@ -23,7 +21,9 @@ void Interpreter::Initialization(){
 
 void Interpreter::InterpretOneLine(string line){
     vector<Token> tokenList;
-    tokenList = _lexer.LexString(line);
+    if(!error.IsQueueEmpty()){
+        tokenList = _lexer.LexString(line);
+    }
     for(vector<Token>::iterator it = tokenList.begin(); it != tokenList.end(); it++){
         cout << (*it).GetTokenTypeString() << ": " << (*it).GetTokenString() << "\n";
     }

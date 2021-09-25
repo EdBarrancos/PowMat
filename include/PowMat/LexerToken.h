@@ -8,6 +8,7 @@
 // Third Party Imports
 
 // Local Imports
+#include "./ErrorHandler.h"
 
 // Namespace
 using namespace std;

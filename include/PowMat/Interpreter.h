@@ -7,6 +7,7 @@
 
 // Local Imports
 #include "./LexerToken.h"
+#include "./ErrorHandler.h"
 
 
 
