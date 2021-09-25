@@ -13,7 +13,23 @@ using namespace std;
 
 
 int main(){
-    
+    Interpreter interpreter = Interpreter();
+
+    string line;
+    char auxLine[100];
+
+    while(auxLine[0] != EOF){
+        int ignore = scanf("%s", auxLine);
+        if (!ignore)
+        {
+            exit(1);
+        }
+
+        cout << auxLine << "\n";
+        line = auxLine;
+        interpreter.InterpretOneLine(line);
+    }
+
     
 
     return 0;

@@ -25,3 +25,7 @@ Error::Error(String* original){
 string Error::GetPrintableForm(){
     return "\x1B[31m" + _value + "\033[0m";
 }
+
+bool Error::Compare(CommonObject* other){
+    return true;
+}

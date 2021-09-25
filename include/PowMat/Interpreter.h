@@ -19,11 +19,3 @@ class Interpreter{
     protected:
         Lexer _lexer;
 };
-
-class Context{
-    public:
-        string initalLine;
-        vector<Token*> tokenList;
-        //Abstration Syntax Tree
-        //Action Tree
-}

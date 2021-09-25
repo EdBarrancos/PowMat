@@ -12,30 +12,33 @@
 // Namespace
 using namespace std;
 
-enum TokenType{
-                WHITE_SPACE,
-                END_OF_LINE,
-                IDENTIFIER,
-                SEPARATOR,
-                OPERATOR,
-                NUMBER,
-                STRING,
-                UNKNOWN
-};
+
 
 class Token{
     public:
-        Token(TokenType tokenType, string token, int charInitialPos);
+        enum TokenType{
+            WHITE_SPACE,
+            END_OF_LINE,
+            IDENTIFIER,
+            SEPARATOR,
+            OPERATOR,
+            NUMBER,
+            STRING,
+            UNKNOWN
+        };
+
+        Token(Token::TokenType tokenType, string token, int charInitialPos);
 
         //Getters
-        TokenType GetTokenType();
+        Token::TokenType GetTokenType();
+        string GetTokenTypeString();
         int GetCharInitialPos();
         string GetTokenString();
 
         void AddCharToString(char newChar);
-
+        
     protected:
-        TokenType _tokenType;
+        Token::TokenType _tokenType;
         int _charInitialPos;
         string _token;
 };
@@ -59,5 +62,5 @@ class Lexer{
     protected:
         map<char, CharClassifier> _charClassifierMap;
         CharClassifier GetCurrentCharClass(string line, int pos);
-        TokenType GetTokenType(TokenType lastTokenType, CharClassifier currentCharClass);
+        Token::TokenType GetTokenType(Token::TokenType lastTokenType, CharClassifier currentCharClass);
 };
