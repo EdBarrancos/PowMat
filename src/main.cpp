@@ -20,17 +20,22 @@ int main(){
     string line;
     char auxLine[100];
 
-    while(auxLine[0] != EOF){
+    //TODO: Better System
+    while(true){
         int ignore = scanf("%s", auxLine);
         if (!ignore)
         {
             exit(1);
         }
 
-        cout << auxLine << "\n";
         line = auxLine;
+        if(line == "-1"){
+            break;
+        }
         interpreter.InterpretOneLine(line);
     }
+
+    error.LogErrors();
 
     
 

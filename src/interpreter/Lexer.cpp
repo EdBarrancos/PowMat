@@ -69,15 +69,15 @@ vector<Token> Lexer::LexString(string commandLine){
             tokenList.push_back(Token(Token::TokenType::END_OF_LINE,string(""), currentPos));
             break;
         }
+        if(newTokenType != currentTokenType || newTokenType == Token::TokenType::SEPARATOR){
+            tokenList.push_back(Token(newTokenType,string(1,commandLine[i]),currentPos));
+            currentTokenType = newTokenType;
+            continue;
+        }
         if(newTokenType == currentTokenType){
             tokenList.back().AddCharToString(commandLine[i]);
             currentTokenType = newTokenType;
         }
-        if(newTokenType != currentTokenType){
-            tokenList.push_back(Token(newTokenType,string(1,commandLine[i]),currentPos));
-            currentTokenType = newTokenType;
-        }
-
     }
 
     return tokenList;

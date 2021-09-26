@@ -29,7 +29,7 @@ string Token::GetTokenTypeString(){
             return "separator";
             break;
         case Token::TokenType::OPERATOR:
-            return "opertator";
+            return "operator";
             break;
         case Token::TokenType::NUMBER:
             return "number";
