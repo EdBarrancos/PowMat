@@ -1,0 +1,8 @@
+identifier: print
+separator: (
+number: 98
+separator: )
+identifier: add
+separator: (
+string: "asdas"
+separator: )
