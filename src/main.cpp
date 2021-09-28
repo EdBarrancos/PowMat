@@ -8,6 +8,7 @@
 #include "../include/PowMat/MiddleMan.h"
 #include "../include/PowMat/ErrorHandler.h"
 #include "../include/PowMat/Interpreter.h"
+#include "../include/PowMat/Debug.h"
 
 
 //Namespaces
@@ -36,8 +37,6 @@ int main(){
     }
 
     error.LogErrors();
-
-    
 
     return 0;
 }
