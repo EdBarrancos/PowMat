@@ -3,3 +3,4 @@ bin/*
 libs/*
 build/*
 tests/tmp/*
+debug/*
