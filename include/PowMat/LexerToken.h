@@ -13,9 +13,10 @@
 // Namespace
 using namespace std;
 
+//Just a super Class to Token and Parsing Element
+class Element{};
 
-
-class Token{
+class Token: public Element{
     public:
         enum TokenType{
             WHITE_SPACE,
