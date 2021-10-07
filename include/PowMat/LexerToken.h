@@ -9,6 +9,7 @@
 
 // Local Imports
 #include "./ErrorHandler.h"
+#include "./Debug.h"
 
 // Namespace
 using namespace std;
@@ -34,6 +35,8 @@ class Token{
         string GetTokenTypeString();
         int GetCharInitialPos();
         string GetTokenString();
+
+        static string TokenTypeToString(Token::TokenType tokenType);
 
         void AddCharToString(char newChar);
         

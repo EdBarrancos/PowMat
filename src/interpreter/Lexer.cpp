@@ -61,12 +61,16 @@ vector<Token> Lexer::LexString(string commandLine){
     Token::TokenType currentTokenType = Token::TokenType::WHITE_SPACE;;
     for (string::size_type i = 0; i < commandLine.size(); i++, currentPos++) {
         Token::TokenType newTokenType = GetTokenType(currentTokenType, GetCurrentCharClass(commandLine, i));
+        debuger.Log("Reading:");
+        debuger.Log(Token::TokenTypeToString(newTokenType), true);
         if(newTokenType == Token::TokenType::WHITE_SPACE){
             currentTokenType = newTokenType;
+            debuger.Log("White Space", true);
             continue;
         }
         if(newTokenType == Token::TokenType::END_OF_LINE){
             tokenList.push_back(Token(Token::TokenType::END_OF_LINE,string(""), currentPos));
+            debuger.Log("END OF LINE", true);
             break;
         }
         if(newTokenType != currentTokenType || newTokenType == Token::TokenType::SEPARATOR){
@@ -80,8 +84,10 @@ vector<Token> Lexer::LexString(string commandLine){
         }
     }
 
+    debuger.Log("DONE", true);
+
     if(tokenList.back().GetTokenType() != Token::TokenType::END_OF_LINE){
-        tokenList.push_back(Token(Token::TokenType::END_OF_LINE, "", currentPos));
+        tokenList.push_back(Token(Token::TokenType::END_OF_LINE, string(""), currentPos));
     }
 
     return tokenList;

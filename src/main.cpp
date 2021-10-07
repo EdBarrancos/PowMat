@@ -21,14 +21,8 @@ int main(){
     string line;
     char auxLine[100];
 
-    //TODO: Better System
-    while(true){
-        int ignore = scanf("%s", auxLine);
-        if (!ignore)
-        {
-            exit(1);
-        }
-
+    while(scanf("%[^\n]s", auxLine) != EOF){
+        getchar();
         line = auxLine;
         if(line == "-1"){
             break;

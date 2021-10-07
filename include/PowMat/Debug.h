@@ -15,7 +15,7 @@ using namespace std;
 class Debug{
     public:
         Debug();
-        void Log(string message);
+        void Log(string message, bool newLine = false);
 
     protected:
         string pathToDebugFile;

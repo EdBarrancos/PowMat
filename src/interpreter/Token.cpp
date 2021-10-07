@@ -14,8 +14,9 @@ Token::Token(Token::TokenType tokenType, string token, int charInitialPos){
 Token::TokenType Token::GetTokenType(){
     return _tokenType;
 }
-string Token::GetTokenTypeString(){
-    switch(_tokenType){
+
+string Token::TokenTypeToString(Token::TokenType tokenType){
+    switch(tokenType){
         case Token::TokenType::WHITE_SPACE:
             return "white_space";
             break;
@@ -41,6 +42,9 @@ string Token::GetTokenTypeString(){
             return "unknown";
             break;
     }
+}
+string Token::GetTokenTypeString(){
+    return TokenTypeToString(_tokenType);
 }
 int Token::GetCharInitialPos(){
     return _charInitialPos;

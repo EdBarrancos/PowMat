@@ -15,7 +15,10 @@ Debug::Debug(){
     debugFile.open(pathToDebugFile);
 }
 
-void Debug::Log(string message){
-    debugFile << message << "\n";
+void Debug::Log(string message, bool newLine){
+    debugFile << message;
+    if(newLine){
+        debugFile << "\n";
+    }
 }
 
