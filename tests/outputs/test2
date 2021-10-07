@@ -1,9 +1,11 @@
 identifier: a
 operator: =
 number: 1237654
+end_of_line: 
 identifier: edu_ardo
 operator: =
 string: "eadasd"
+end_of_line: 
 identifier: list
 separator: {
 identifier: asd
@@ -11,6 +13,7 @@ separator: ,
 identifier: asdasd
 separator: ,
 separator: }
+end_of_line: 
 number: 1
 operator: +
 number: 2
@@ -18,6 +21,7 @@ operator: +
 number: 4
 operator: ==
 number: 1324567
+end_of_line: 
 number: 1
 operator: -
 number: 3
@@ -29,3 +33,4 @@ operator: /
 number: 5
 operator: ==
 number: 1245264
+end_of_line: 

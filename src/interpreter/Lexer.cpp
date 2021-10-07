@@ -80,6 +80,10 @@ vector<Token> Lexer::LexString(string commandLine){
         }
     }
 
+    if(tokenList.back().GetTokenType() != Token::TokenType::END_OF_LINE){
+        tokenList.push_back(Token(Token::TokenType::END_OF_LINE, "", currentPos));
+    }
+
     return tokenList;
 }
 

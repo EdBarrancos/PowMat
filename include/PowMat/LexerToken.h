@@ -13,10 +13,7 @@
 // Namespace
 using namespace std;
 
-//Just a super Class to Token and Parsing Element
-class Element{};
-
-class Token: public Element{
+class Token{
     public:
         enum TokenType{
             WHITE_SPACE,
@@ -28,7 +25,8 @@ class Token: public Element{
             STRING,
             UNKNOWN
         };
-
+        
+        Token();
         Token(Token::TokenType tokenType, string token, int charInitialPos);
 
         //Getters

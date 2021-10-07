@@ -2,7 +2,9 @@ identifier: print
 separator: (
 number: 98
 separator: )
+end_of_line: 
 identifier: add
 separator: (
 string: "asdas"
 separator: )
+end_of_line: 
